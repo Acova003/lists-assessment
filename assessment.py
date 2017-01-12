@@ -21,8 +21,8 @@ def all_odd(numbers):
         if item % 2: #if has a non zero value
             odd_numbers.append(item)
     return odd_numbers
-    
-all_odd([1,2,3,4,5])
+
+all_odd([1 ,2 ,3 ,4 ,5 ])
 
 
 def print_indices(items):
@@ -48,7 +48,7 @@ def print_indices(items):
         1 Jeep
         2 Toyota
         3 Volvo
-    
+
     """
     for i in range(len(items)):
         print "%d %s" % (i, items[i])
@@ -72,7 +72,7 @@ def foods_in_common(foods1, foods2):
         ...     ["hummus", "cheese", "beets", "kale", "lentils", "bagel", "cake" ]
         ... )
         ['bagel', 'cake', 'cheese', 'kale']
-        
+
     If there are no foods in common, return an empty list::
 
         >>> foods_in_common(
@@ -83,15 +83,15 @@ def foods_in_common(foods1, foods2):
 
     """
     new_foods = []
-    sorted_lst1 = sorted(food1)
-    sorted_lst2 = sorted(food2)
-    for food in food1:
-        if food in food2:
+    sorted_lst1 = sorted(foods1)
+    sorted_lst2 = sorted(foods2)
+    for food in sorted_lst1:
+        if food in sorted_lst2:
             new_foods.append(food)
 
     return new_foods
 
-foods_in_common(["cheese", "bagel", "cake", "kale", "zebra cakes"], ["hummus", "cheese", "beets", "kale", "lentils", "bagel", "cake" ])
+foods_in_common(["cheese", "bagel", "cake", "kale", "zebra cakes"], ["hummus", "cheese", "beets", "kale", "lentils", "bagel", "cake"])
 
 
 def every_other_item(items):
@@ -110,6 +110,7 @@ def every_other_item(items):
 
     return items[::2]
 # every_other_item()
+
 
 def largest_n_items(items, n):
     """Return the `n` largest integers in list, in ascending order.
@@ -133,10 +134,15 @@ def largest_n_items(items, n):
         [3, 3]
 
     """
-    sorted_list = n.sort(key=int)
+    if n == 0:
+        return []
 
+    else:
+        items.sort()
+        return items[-n:]
 
-    return []
+    # sorted_list = sorted(items)
+    # return sorted_list[-n:]
 
 
 #####################################################################
